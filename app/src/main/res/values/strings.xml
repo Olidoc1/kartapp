@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Busniess card</string>
-    <string name="username_text">\@TestName</string>
+    <string name="username_text">\@WesAnderson</string>
     <string name="tel_number">+420 123456789</string>
     <string name="email_text">example@example.com</string>
+    <string name="name">Zero Moustafa</string>
+    <string name="position">New Bellhop</string>
 </resources>
