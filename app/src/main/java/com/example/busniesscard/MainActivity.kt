@@ -89,8 +89,10 @@ private fun MainText(modifier: Modifier = Modifier,name: String, position: Strin
 private fun TextDef (basic:String, modifier: Modifier = Modifier) {
 
     val imagetel = painterResource(R.drawable.telephone_call)
-    val imageem = painterResource(R.drawable.email)
-    val imagegit = painterResource(R.drawable.github)
+    
+    //TODO IMPLEMENT THIS IMAGES FOR GITHUB, EMIAL AND PHONE
+    //val imageem = painterResource(R.drawable.email)
+   // val imagegit = painterResource(R.drawable.github)
 
 
     Column (
