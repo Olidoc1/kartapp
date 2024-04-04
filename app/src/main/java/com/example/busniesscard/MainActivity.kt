@@ -21,7 +21,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -37,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Color(255,216,236)
                 ) {
-                    RowDown()
+RowDown()
                 }
             }
         }
@@ -86,21 +85,54 @@ private fun MainText(modifier: Modifier = Modifier,name: String, position: Strin
 
 }
 @Composable
-private fun TextDef (basic:String, modifier: Modifier = Modifier) {
+private fun TextDef (modifier: Modifier = Modifier) {
 
     val imagetel = painterResource(R.drawable.telephone_call)
-    
+
     //TODO IMPLEMENT THIS IMAGES FOR GITHUB, EMIAL AND PHONE
-    //val imageem = painterResource(R.drawable.email)
-   // val imagegit = painterResource(R.drawable.github)
+    val imageem = painterResource(R.drawable.email)
+    val imagegit = painterResource(R.drawable.github)
 
+    Column (modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
 
+        Row (modifier.padding(bottom = 6.dp)) {
+            Image(
+                painter = imagetel,
+                contentDescription = null,
+                Modifier
+                    .size(20.dp))
+
+            Text(text = stringResource(R.string.tel_number), modifier.padding(start = 20.dp))
+        }
+
+        Row (modifier.padding(bottom = 6.dp)) {
+            Image(
+                painter = imagegit,
+                contentDescription = null,
+                Modifier
+                    .size(20.dp))
+            Text(text = stringResource(R.string.username_text), modifier.padding(start = 20.dp))
+        }
+
+        Row (modifier.padding(bottom = 6.dp)) {
+            Image(
+                painter = imageem,
+                contentDescription = null,
+                Modifier
+                    .size(20.dp))
+            Text(text = stringResource(R.string.email_text), modifier.padding(start = 20.dp))
+        }
+
+    }
+}
+
+    /*
     Column (
         modifier = modifier
             //.background(color = Color.Yellow)
-            .fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+            .fillMaxWidth()
+            .background(color = Color.Green),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         Row(
@@ -125,27 +157,36 @@ private fun TextDef (basic:String, modifier: Modifier = Modifier) {
         }
     }
 }
-
-@Composable
-fun RowDown(modifier: Modifier = Modifier) {
-    Column {
-
-        Column(
-            modifier = modifier
-                .fillMaxHeight()
-                .weight(6f),
-            verticalArrangement = Arrangement.Center
-        )
-
-        {
-            MainText(
-                name = stringResource(R.string.name), position = stringResource(R.string.position)
+*/
+    @Composable
+    fun RowDown(modifier: Modifier = Modifier) {
+        Column {
+            Column(
+                modifier = modifier
+                    .fillMaxHeight()
+                    .weight(6f),
+                verticalArrangement = Arrangement.Center
             )
-        }
+
+            {
+                MainText(
+                    name = stringResource(R.string.name),
+                    position = stringResource(R.string.position)
+                )
 
 
-        Column(modifier = modifier
-                    .weight(1f))
+            }
+
+TextDef()
+            /* Column(
+            modifier = modifier
+                .weight(1f)
+                .background(color = Color.Blue)
+                .align(Alignment.Start)
+            ,
+            verticalArrangement = Arrangement.Center,
+            //horizontalAlignment = Alignment.CenterHorizontally
+        )
                 {
             TextDef(
                 basic = stringResource(R.string.tel_number),
@@ -157,14 +198,14 @@ fun RowDown(modifier: Modifier = Modifier) {
                 basic = stringResource(R.string.email_text),
 
                 )
+        }*/
         }
     }
-    }
 
 
 
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun GreetingPreview() {
-    RowDown()
+    @Preview(showBackground = true, showSystemUi = true)
+    @Composable
+    fun GreetingPreview() {
+RowDown()
     }
