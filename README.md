@@ -4,6 +4,9 @@ It's just start.
 
 **TO-DO:**
 
-- [ ] Edit code to look more beautiful.
-- [ ] Make contact info inline and in center of display.
-- [ ] Add icons for other contact info.
+- [*] Edit code to look more beautiful.
+- [*] Make contact info inline and in center of display.
+- [*] Add icons for other contact info.
+- [ ] Make hotel icon interactive 
+- [ ] Better typography
+- [ ] Cleaner code
